@@ -23,6 +23,6 @@
 - What is the next dinosaur?
 
 ## Web
-- C IS FOR COOKIE THAT'S GOOD ENOUGH FOR ME.
+- [C IS FOR COOKIE THAT'S GOOD ENOUGH FOR ME.](./web/c-is-for-cookie/writeup.md)
 - Ha, classic
 - Rhyming
