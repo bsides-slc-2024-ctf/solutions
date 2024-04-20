@@ -16,7 +16,7 @@ In this case, it's necessary to download the original image:
 
 The first step someone might take is to run strings and other public stego tools against the image, to try to discover low-hanging fruit.
 
-If you run strings against the file, you may have found a "flag" string, which you could further inspect with a hex editor:
+If you ran strings against the file, you may have found a "flag" string, which you could further inspect with a hex editor:
 
 ![strings and xxd](./.img/strings-xxd.png)
 
@@ -44,7 +44,7 @@ Interestingly, the data is not quite usable yet. We can [look up the first two b
 
 Our data is zlib-compressed!
 
-> Note: [Zlib uses "DEFLATE" (i.e. zlib) compression](https://en.wikipedia.org/wiki/PNG#Compression) in data chunks, with a byte reserved in the IHDR chunk for future support. Check out the IDAT chunk that follows our flAg chunk, and you'll see its data starts with `78 01`, the zlib designation for uncompressed data.
+> Note: [PNG uses "DEFLATE" (i.e. zlib) compression](https://en.wikipedia.org/wiki/PNG#Compression) in data chunks, with a byte reserved in the IHDR chunk for future compression support. Check out the IDAT chunk that follows our flAg chunk, and you'll see its data starts with `78 01`, the zlib designation for uncompressed data.
 
 We can run the data through [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')Zlib_Inflate(0,0,'Adaptive',false,false)&input=NzggOWMgNGIgY2IgNDkgNGMgYWYgMGUgY2UgNDggNzUgYzkgNGYgMmQgY2UgMmIgNzEgMmQgNGIgY2QgNzMgY2YgZjcgNDggMmQgNGEgYWQgMDUgMDAgODAgODggMDkgZTg) to get our final answer:
 
