@@ -7,7 +7,7 @@
 
 ## Grab Bag
 - Clear The Line
-- Memelord
+- [Memelord](./bag/memelord.md)
 - Rome wasn't builtin a day
 - Teletype
 - Triceratops
