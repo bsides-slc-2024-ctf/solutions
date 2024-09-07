@@ -1,6 +1,8 @@
 # Climber BSides Cache 2024
 ---
 
+## Introduction
+
 In this challenge, we were simply provided with an elf binary (linux executable) to reverse.
 
 After downloading the binary and adding execute permissions with chmod +x, running the binary results in three questions, prompting the user for an answer:
@@ -8,27 +10,32 @@ After downloading the binary and adding execute permissions with chmod +x, runni
 2. Enter the type of climb (ice, rock, mixed):
 3. We lost this input in the mountains... We don't remember what it asks for:
 
-Putting in guesses results in the message: "Checks failed. Are you prepared for this ascent?"
+Inputing random answers results in the message: "Checks failed. Are you prepared for this ascent?"
 
-So then, it's time to start up Ghidra.
+So then, it's time to spin up Ghidra.
 
 ---
 
-Opening the file in ghidra, and runing it's default analysis identifies the main function, which is always a good place to start. (fig. 1)
+## Reversing
 
-In the main function, we can see the three print statements and their respective inputs.
+Opening the file in Ghidra and runing the default auto-analysis identifies the main function, which is always a good place to start. (fig. 1)
 
-Later in the function, we see a check, if the input from the first question is greater than 1400, we continue, else we automatically fail. Giving us the answer to the first question.
+In the main function there are three print statements, one for each of the questions we saw during execution. Underneath each of the print statements is a corresponding scanf statement, which takes in the user input. (fig. 2)
 
-Next the input from the second question is checked against the string "rock", giving us our answer to the second question.
+Once the answers are collected there is an if statement, which checks whether the input value is greater than 14000, giving us the answer to the first question. (fig. 3)
 
-Lastly we see the input from the last question being compared against the integer 2.
+If the first statement is true it will continue to check if the input from the second value is equal to the string "rock", which matches with one of the provided options seen in the second question, once again giving us our answer.
 
-There are some functions that run if all the answers were correct, which compute and return the key, however now that we have the answers, there is no need to reverse engineer those functions.
+Lastly, if the previous statement is true, the value of the input for the final and seemingly unanswerable question is simply checked against the number 2.
 
-Running the executable and inputing the correct options gives us the flag:
+There is a final function which runs if all questions are answered correctly. This function simply calls another function, passing in an argument. This final function appears to calculate and return the flag. However seeing as we have all the answers, there is no need to reverse the flag calculation.
+
+With the answers noted down, we can run the executable and get the flag.
 1. 14001
 2. rock
 3. 2
 
-Writeup by Fr3ki
+---
+
+# Writeup by Fr3ki
+[github](https://github.com/Fr3ki)  [x](x.com/Fr3ki_)  [blog](https://frk3i.xyz)
