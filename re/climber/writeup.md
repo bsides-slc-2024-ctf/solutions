@@ -19,13 +19,16 @@ So then, it's time to spin up Ghidra.
 ## Reversing
 
 Opening the file in Ghidra and runing the default auto-analysis identifies the main function, which is always a good place to start.
+
 ![fig. 1](Fig1.png)
 
 
 In the main function there are three print statements, one for each of the questions we saw during execution. Underneath each of the print statements is a corresponding scanf statement, which takes in the user input.
+
 ![fig. 2](fig2.png)
 
 Once the answers are collected there is an if statement, which checks whether the input value is greater than 14000, giving us the answer to the first question.
+
 ![fig. 3](fig3.png)
 
 If the first statement is true it will continue to check if the input from the second value is equal to the string "rock", which matches with one of the provided options seen in the second question, once again giving us our answer.
