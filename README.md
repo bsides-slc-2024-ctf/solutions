@@ -18,7 +18,7 @@
 - To The Hunt!
 
 ## Reverse Engineering
-- Climber
+- [Climber](./re/climber/writeup.md)
 - Shhhh, don't talk
 - What is the next dinosaur?
 
