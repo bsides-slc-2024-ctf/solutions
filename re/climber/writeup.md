@@ -38,4 +38,4 @@ With the answers noted down, we can run the executable and get the flag.
 ---
 
 # Writeup by Fr3ki
-[github](https://github.com/Fr3ki)  [x](x.com/Fr3ki_)  [blog](https://frk3i.xyz)
+[github](https://github.com/Fr3ki)  [x](https://x.com/Fr3ki_)  [blog](https://frk3i.xyz)
