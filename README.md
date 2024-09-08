@@ -11,6 +11,7 @@
 - Rome wasn't builtin a day
 - Teletype
 - Triceratops
+- ![Triceratops](./bag/triceratops/writeup.md)
 - Visualize Toast
 
 ## OSINT
