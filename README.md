@@ -6,7 +6,7 @@
 - [Spartan Secrets](./crypto/spartan-secrets/writeup.md)
 
 ## Grab Bag
-- Clear The Line
+- [Clear The Line](./bag/clear-the-line/writeup.md)
 - [Memelord](./bag/memelord/writeup.md)
 - Rome wasn't builtin a day
 - Teletype
